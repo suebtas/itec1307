@@ -6,7 +6,7 @@ services:
       args:
        PHP_VERSION: ${PHP_VERSION}
     volumes:
-      - ./public_html/:/var/www/html/
+      - ./:/var/www/html/
     container_name: php
   apache:
     build:
@@ -19,7 +19,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./public_html/:/var/www/html/
+      - ./:/var/www/html/
     container_name: apache
   mysql:
     image: mysql:${MYSQL_VERSION}    
